@@ -1,0 +1,415 @@
+/* Model Trainer Container */
+.model-trainer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.model-trainer.dark {
+    background: rgba(26, 26, 46, 0.8);
+    color: #ffffff;
+}
+
+.model-trainer.light {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333333;
+}
+
+/* Trainer Header */
+.trainer-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.trainer-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.trainer-header p {
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+/* Trainer Content */
+.trainer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Model Selection */
+.model-selection {
+    margin-bottom: 30px;
+}
+
+.model-selection h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.model-card {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.model-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.model-card.selected {
+    background: rgba(102, 126, 234, 0.2);
+    border-left-color: currentColor;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.model-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.model-desc {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.model-stats {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Split Configuration */
+.split-configuration {
+    margin-bottom: 30px;
+}
+
+.split-configuration h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #667eea;
+}
+
+.split-controls {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.split-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.split-bars {
+    display: flex;
+    height: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.split-bar {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.split-bar.train {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.split-bar.val {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.split-bar.test {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.split-inputs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.split-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.split-input input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.split-input input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.auto-split-btn {
+    width: 100%;
+    padding: 12px;
+    background: rgba(102, 126, 234, 0.2);
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    color: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.auto-split-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.split-recommendation {
+    background: rgba(16, 185, 129, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #10b981;
+}
+
+.split-recommendation h4 {
+    margin-bottom: 8px;
+    color: #10b981;
+}
+
+.split-recommendation p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Column Selection */
+.column-selection {
+    margin-bottom: 30px;
+}
+
+.column-selection h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.columns-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.target-section,
+.features-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.target-section h4,
+.features-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.target-columns,
+.feature-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.column-item {
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 0.9rem;
+}
+
+.column-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.column-item.selected {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #ffffff;
+    color: white;
+    font-weight: 600;
+}
+
+.selected-target,
+.selected-features {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+/* Model Comparison */
+.model-comparison {
+    margin-top: 30px;
+}
+
+.model-comparison h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.comparison-chart {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Training Progress */
+.training-progress {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+    border: 2px solid #667eea;
+}
+
+.training-progress h4 {
+    margin-bottom: 15px;
+    color: #667eea;
+}
+
+.progress-bar {
+    height: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.progress-percent {
+    color: #667eea;
+    font-size: 1.2rem;
+}
+
+/* Action Section */
+.action-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.train-btn {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.train-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.train-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .trainer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .split-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .target-columns,
+    .feature-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,326 @@
+/* CSV Viewer Container */
+.csv-viewer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.csv-viewer.dark {
+    background: rgba(26, 26, 46, 0.95);
+    color: #ffffff;
+}
+
+.csv-viewer.light {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333333;
+}
+
+/* Viewer Header */
+.viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.viewer-header h3 {
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+.file-selector select {
+    padding: 8px 15px;
+    background: rgba(102, 126, 234, 0.2);
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    color: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-selector select:focus {
+    outline: none;
+    background: rgba(102, 126, 234, 0.3);
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+.download-btn,
+.close-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.close-btn {
+    background: rgba(239, 68, 68, 0.2);
+    border: 2px solid #ef4444;
+    color: inherit;
+}
+
+.download-btn:hover,
+.close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Viewer Controls */
+.viewer-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+.clear-search {
+    padding: 5px 10px;
+    background: rgba(239, 68, 68, 0.3);
+    border: none;
+    border-radius: 5px;
+    color: inherit;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.clear-search:hover {
+    background: #ef4444;
+    color: white;
+}
+
+.viewer-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.viewer-stats span {
+    opacity: 0.8;
+}
+
+/* Table Container */
+.table-container {
+    flex: 1;
+    overflow: auto;
+    padding: 20px 30px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.table-container th,
+.table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+}
+
+.table-container th {
+    background: rgba(102, 126, 234, 0.2);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.table-container th:hover {
+    background: rgba(102, 126, 234, 0.3);
+}
+
+.sort-icon {
+    margin-left: 8px;
+    opacity: 0.5;
+    font-size: 0.8rem;
+}
+
+.sort-icon.asc,
+.sort-icon.desc {
+    opacity: 1;
+    color: #667eea;
+}
+
+.table-container tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.missing-value {
+    color: #ef4444;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 30px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-btn {
+    padding: 8px 16px;
+    background: rgba(102, 126, 234, 0.2);
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    color: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: #667eea;
+    color: white;
+}
+
+.page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 5px;
+}
+
+.page-number {
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.page-number:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.page-number.active {
+    background: #667eea;
+    border-color: #ffffff;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .csv-viewer {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .viewer-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-left,
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .viewer-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .viewer-stats {
+        justify-content: space-between;
+    }
+
+    .table-container {
+        padding: 15px;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+}
