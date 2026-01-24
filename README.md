@@ -246,6 +246,6 @@ This project is licensed under the **MIT License**.
 
 ## ❤️ Built By
 
-**Afreed Baig**
+**The Gurlzz**
 
 With the belief that powerful technology should be accessible to everyone.
