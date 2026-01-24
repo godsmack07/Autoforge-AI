@@ -2,10 +2,9 @@ services:
   - type: web
     name: autoforge-ml-engine
     env: python
+    runtime: python-3.11.7
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
       - key: FLASK_ENV
         value: production
-      - key: FLASK_PORT
-        value: 10000
