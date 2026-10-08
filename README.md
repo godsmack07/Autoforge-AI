@@ -1,251 +1,222 @@
 # 🤖 AutoForge AI
 
-**Build, Understand, and Deploy Machine Learning Models — Without Writing Code**
-
----
-
-## 🧩 Problem Statement
-
-Machine learning is powerful — but access to it is broken.
-
-Today, building an ML model requires:
-
-* Writing and debugging code
-* Understanding complex libraries
-* Managing data preprocessing pipelines
-* Manually deploying models as APIs
-
-This creates a massive gap:
-
-* Non-technical users can’t use ML at all
-* Students spend more time fighting setup than learning concepts
-* Developers & startups waste hours on repetitive ML boilerplate
-
-**The core problem:**
-Machine learning is locked behind code, tooling complexity, and fragmented workflows.
-
----
-
-## 💡 Our Solution: AutoForge AI
-
-AutoForge AI is an **end-to-end, no-code machine learning platform** that enables users to:
-
-* ✅ Upload data
-* ✅ Clean and validate it automatically
-* ✅ Train ML models with guided assistance
-* ✅ Test models visually and interactively
-* ✅ Deploy models instantly as APIs
-
-All from a **single, intuitive interface**.
-
-No scripts.
-No notebooks.
-No guesswork.
-
----
-
-## 👥 Who Is This For?
-
-* 📊 **Data enthusiasts** who want results without coding
-* 🎓 **Students** learning ML concepts visually
-* 🧑‍💼 **Business professionals** validating ideas using data
-* 🚀 **Hackathon teams & startups** prototyping fast
-
----
-
-## 🧠 How AutoForge AI Works (End-to-End Flow)
-
-This workflow is intentionally designed so users feel guided from raw data to production-ready models.
-
----
-
-### 1️⃣ Intelligent Data Upload
-
-Users begin by uploading a dataset.
-
-**Behind the scenes:**
-
-* Supports common formats like CSV and TSV
-* Instantly parses and validates datasets
-* Automatically detects schema (numerical, categorical, target columns)
-* Provides a live dataset preview before moving forward
-
-**Why this matters:**
-Prevents garbage-in → garbage-out ML.
-
----
-
-### 2️⃣ Automated Data Cleaning & Validation
-
-Once uploaded, AutoForge AI analyzes the dataset in real time.
-
-**Automatic operations include:**
-
-* Missing value detection and handling
-* Duplicate row removal
-* Dataset health statistics
-* Visual comparison between raw and cleaned data
-
-Users clearly see what changed — nothing happens silently.
-
-**Why this matters:**
-Data quality directly determines model reliability.
-
----
-
-### 3️⃣ Assisted Model Training (No Guesswork)
-
-Users configure training by selecting:
-
-* Problem type (Regression or Classification)
-* Target variable
-* Preferred algorithms
-
-**Supported models include:**
-
-* Linear Regression
-* Random Forest
-* Other Scikit-learn–based algorithms
-
-**Behind the scenes:**
-
-* Automatic train/test split
-* Feature handling
-* Model fitting and evaluation
-* Live training progress feedback
-
-**Why this matters:**
-Users focus on decisions, not syntax.
-
----
-
-### 4️⃣ Comprehensive Model Testing & Visualization
-
-After training, users enter the **Model Tester Dashboard**.
-
-**Capabilities include:**
-
-📈 **Interactive visualizations**
-
-* Actual vs Predicted plots
-* Accuracy and error distributions
-* Feature importance insights
-
-🧪 **Deterministic live predictions**
-
-* Users manually input values
-* Models respond instantly and consistently
-
-📤 **Exportable results**
-
-* Metrics
-* Predictions
-* Documentation-ready outputs
-
-**Why this matters:**
-Models are only useful if users trust and understand them.
-
----
-
-### 5️⃣ One-Click Deployment
-
-Once satisfied, users deploy models instantly.
-
-**Deployment capabilities:**
-
-* REST API generation
-* Ready-to-use examples (Python, JavaScript, cURL)
-* Model export formats (.pkl, .onnx)
-* Live deployment status tracking
-
-**Why this matters:**
-From idea → usable ML API in minutes.
-
----
-
-## 🛠️ Tech Stack & Architecture
-
-AutoForge AI is built using **production-grade technologies**, not prototypes.
-
-### 🎨 Frontend
-
-* React.js — Component-based, scalable UI
-* Vanilla CSS — High-performance custom styling
-* Recharts — Interactive data visualizations
-* React Icons — Consistent professional iconography
-* React Hot Toast — Real-time feedback and notifications
-
-### 🧠 Machine Learning Engine
-
-* Python — Core ML logic
-* Scikit-learn — Industry-standard ML algorithms
-* Pandas & NumPy — Data processing backbone
-* FastAPI — High-performance, deployment-ready API layer
-
----
-
-## ⚙️ Installation & Setup
+**Build AI Models Without Code** - A complete no-code AutoML platform for data analysis, model training, and deployment.
+
+![AutoForge AI](https://img.shields.io/badge/AutoML-Platform-blue)
+![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
+![Python](https://img.shields.io/badge/Python-ML%20Engine-yellow?logo=python)
+
+## ✨ Features
+
+- 📊 **Data Upload & Analysis** - Upload CSV files or use sample datasets
+- 🧹 **Automated Data Cleaning** - Remove missing values, duplicates, and outliers
+- 🧠 **10+ ML Models** - Linear Regression, Random Forest, XGBoost, Neural Networks, and more
+- 📈 **Real-time Visualization** - Interactive charts and model performance metrics
+- 🧪 **Model Testing** - Comprehensive evaluation with MAE, RMSE, R² scores
+- 🚀 **One-Click Deployment** - Deploy as REST API, Web App, or export model files
+- 🌓 **Dark/Light Mode** - Beautiful glassmorphism UI with theme toggle
+
+## 🏗️ Architecture
+
+```
+autoforge-ai/
+├── frontend/          # React application (Port 3000)
+├── backend/           # Node.js Express API (Port 5000)
+├── ml-engine/         # Python ML services (Port 5001)
+└── sample-datasets/   # Example datasets
+```
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-* Node.js v16+
-* Python 3.9+
+- Node.js 16+ and npm
+- Python 3.8+
+- Git
 
-### 1️⃣ Clone the Repository
+### Installation
 
+1. **Clone the repository**
 ```bash
-git clone https://github.com/afrdbaig7/autoforge-ai.git
+git clone https://github.com/yourusername/autoforge-ai.git
 cd autoforge-ai
 ```
 
-### 2️⃣ Frontend Setup
+2. **Install dependencies**
+
+Run the automated setup:
+```bash
+python setup.py
+```
+
+Or install manually:
 
 ```bash
+# Frontend
 cd frontend
 npm install
-npm run dev
-```
 
-### 3️⃣ ML Engine Setup
+# Backend
+cd ../backend
+npm install
 
-```bash
+# ML Engine
 cd ../ml-engine
 pip install -r requirements.txt
-python main.py
 ```
 
----
+### Running the Application
 
-## 🎨 Design Philosophy
+You need **3 terminals** running simultaneously:
 
-AutoForge AI is designed with a single guiding principle:
+**Terminal 1 - Backend API**
+```bash
+cd backend
+npm start
+```
 
-> **Machine learning should feel understandable, alive, and trustworthy — not intimidating.**
+**Terminal 2 - Frontend**
+```bash
+cd frontend
+npm start
+```
 
-Every visual and interaction decision is intentional and exists to:
+**Terminal 3 - ML Engine**
+```bash
+cd ml-engine
+python app.py
+```
 
-* Reduce cognitive load
-* Communicate system state clearly
-* Build user confidence at every step
+The application will be available at:
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:5000
+- **ML Engine**: http://localhost:5001
 
-### Key Design Principles
+## 📖 Usage Guide
 
-* **Clarity over cleverness:** Interfaces prioritize understanding over visual noise
-* **Dark-first, focus-driven UI:** Optimized for data-heavy workflows
-* **Purposeful glassmorphism:** Visual hierarchy without distraction
-* **Motion as communication:** Animations explain progress and system feedback
-* **Outcome-oriented UX:** Users are guided from upload to deployment without dead ends
+### 1. Upload Data
+- Drag & drop CSV files or select from sample datasets
+- View automatic data quality analysis
+- Identify missing values and data issues
 
----
+### 2. Clean Data
+- Select cleaning options (remove missing, fill values, remove duplicates)
+- Choose columns to include
+- Specify row ranges for processing
+
+### 3. Train Model
+- Choose from 10+ regression models
+- Configure train/validation/test split
+- Select target and feature columns
+- Monitor training progress in real-time
+
+### 4. Test & Validate
+- View comprehensive metrics (Accuracy, MAE, RMSE, R²)
+- Interactive charts (Line, Scatter, Error distribution)
+- Make live predictions with custom inputs
+
+### 5. Deploy
+- **REST API**: Get API endpoint and authentication key
+- **Web App**: Embed widget in your website
+- **Export**: Download model in .pkl, .onnx, .h5, or JSON format
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React 18.2
+- Recharts for data visualization
+- React Hot Toast for notifications
+- PapaParse for CSV parsing
+- React Dropzone for file uploads
+
+### Backend
+- Express.js
+- Socket.IO for real-time updates
+- Multer for file handling
+- Helmet for security
+- Express Rate Limit
+
+### ML Engine
+- Flask REST API
+- scikit-learn for classical ML
+- XGBoost, LightGBM, CatBoost for gradient boosting
+- TensorFlow/Keras for neural networks
+- SHAP & LIME for model explainability
+
+## 📁 Project Structure
+
+```
+autoforge-ai/
+├── frontend/
+│   ├── src/
+│   │   ├── components/      # React components
+│   │   │   ├── UploadWizard.jsx
+│   │   │   ├── DataCleaner.jsx
+│   │   │   ├── ModelTrainer.jsx
+│   │   │   ├── ModelTester.jsx
+│   │   │   ├── ModelDeployer.jsx
+│   │   │   ├── CSVViewer.jsx
+│   │   │   ├── DataVisualizer.jsx
+│   │   │   └── ThemeToggle.jsx
+│   │   ├── App.jsx
+│   │   └── index.js
+│   └── package.json
+├── backend/
+│   ├── server.js            # Express API server
+│   ├── uploads/             # Uploaded files
+│   ├── models/              # Trained models
+│   └── package.json
+├── ml-engine/
+│   ├── app.py               # Flask ML API
+│   ├── data_loader.py
+│   ├── data_cleaner.py
+│   ├── model_trainer.py
+│   ├── model_evaluator.py
+│   ├── model_deployer.py
+│   └── requirements.txt
+└── setup.py                 # Automated setup script
+```
+
+## 🎯 API Endpoints
+
+### Backend (Port 5000)
+- `GET /api/health` - Health check
+- `POST /api/upload` - Upload and analyze files
+- `POST /api/clean` - Clean data
+- `POST /api/train` - Train model
+- `POST /api/test` - Test model
+- `POST /api/predict` - Make predictions
+- `POST /api/deploy` - Deploy model
+
+### ML Engine (Port 5001)
+- `GET /api/ml/health` - Health check
+- `POST /api/ml/analyze` - Analyze CSV data
+- `POST /api/ml/clean` - Clean data
+- `POST /api/ml/train` - Train model
+- `POST /api/ml/evaluate` - Evaluate model
+- `POST /api/ml/predict` - Make predictions
+- `POST /api/ml/deploy` - Deploy model
+- `GET /api/ml/models` - List available models
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- Built with React, Express, and Flask
+- ML powered by scikit-learn, XGBoost, and TensorFlow
+- UI inspired by modern glassmorphism design trends
+
+## 📧 Contact
+
+For questions or support, please open an issue on GitHub.
 
 ---
 
-## ❤️ Built By
-
-**The Gurlzz**
-
-With the belief that powerful technology should be accessible to everyone.
+**Made with ❤️ by AutoForge AI Team**
